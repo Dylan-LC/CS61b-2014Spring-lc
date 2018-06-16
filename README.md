@@ -49,3 +49,9 @@
 | `C-r` | reverse search |
 | Recursive editing level | Type `M-x` to get into a minibuffer; then type `<ESC> <ESC> <ESC>` to get out. |
 | `C-h` | To use the Help feature. The most basic HELP feature is C-h c. To get more information about a command, use `C-h k` instead of `C-h c`. |
+| `M-x compile` | open compile command line in Emacs|
+| `M-! cmd RET` | Run the shell command line cmd and display the output (shell-command). |
+| `M-| cmd RET` | Run the shell command line cmd with region contents as input; optionally replace the region with the output (shell-command-on-region). |
+| `M-x shell` | Run a subshell with input and output through an Emacs buffer. You can then give commands interactively. |
+| `M-x term` | Run a subshell with input and output through an Emacs buffer. You can then give commands interactively. Full terminal emulation is available. |
+| `M-x eshell` | Start the Emacs shell. |
