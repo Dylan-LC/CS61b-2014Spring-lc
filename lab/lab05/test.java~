@@ -1,0 +1,22 @@
+public class test {
+    static X[] xa = new X[5];
+    static Y[] ya = new Y[5];
+
+    public static boolean assign(X[] x, Y[] y) {
+	try {
+	    y = x;
+	} catch (Exception e) {
+	    return false;
+	}
+	return true;
+    }
+}
+
+
+publich static void main(String arg[]) {
+    boolean res1 = assign(xa, ya);
+    boolean res2 = assign(ya, xa);
+    System.out.println("Can we assign xa to ya? " +
+		       res1 + ", and vice versa? "
+		       + res2);
+}

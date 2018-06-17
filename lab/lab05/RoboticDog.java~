@@ -1,0 +1,16 @@
+public class RoboticDog extends Animal implements Robotic {
+    public static final int leg=4;
+    public boolean bark(int a) {
+	System.out.println("woh!");
+	return true;
+    }
+	
+    public void speak(String a) {
+	System.out.println("I'm a RoboticDog and my name is: "+a);
+    }
+    public static void main (String[] args) {
+	System.out.println("Animal leg: "+Animal.leg);
+	System.out.println("Robotic leg: "+Robotic.leg);
+    }	
+		   	
+}
