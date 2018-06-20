@@ -1,0 +1,15 @@
+import java.io.*;
+
+public class Nuke2 {
+    public static void main(String[] args) {
+	BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+	InputStream input = new InputStream();
+	try{
+	    input = keyboard.skip(1);
+	} catch (Exception e) {
+	    System.out.println("***Error: " + e + ". Perhaps you type in a string containing 
+                               fewer than two characters!")
+	}
+	
+    }
+}
