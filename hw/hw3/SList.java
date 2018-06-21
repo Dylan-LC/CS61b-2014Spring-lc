@@ -112,10 +112,24 @@ public class SList {
 
   public void squish() {
     // Fill in your solution here.  (Ours is eleven lines long.)
+      // SListNode tempNode;
+      SListNode currentNode = head;
+      if (currentNode != null) {
+	  while (currentNode.next != null) {
+	      if (currentNode.item.equals(currentNode.next.item)) {
+		  // tempNode = currentNode;
+		  currentNode.next = currentNode.next.next;
+		  // tempNode.item = null;
+		  size--;
+	      } else {
+		  currentNode = currentNode.next;
+	      }
+	  }
+      }
   }
 
   /**
-   *  twin() takes this list and doubles its length by replacing each node
+   *  Twin() takes this list and doubles its length by replacing each node
    *  with two consecutive nodes referencing the same item.
    *
    *  For example, if the input list is [ 3 7 4 2 2 ], the
@@ -127,6 +141,15 @@ public class SList {
 
   public void twin() {
     // Fill in your solution here.  (Ours is seven lines long.)
+      SListNode copyNode = head;
+      if (copyNode != null) {
+	  while (copyNode != null) {
+	      SListNode temp = new SListNode(copyNode.item);
+	      temp.next = copyNode.next;
+	      copyNode.next = temp;
+	      copyNode = temp.next;
+	  }
+      }
   }
 
   /**

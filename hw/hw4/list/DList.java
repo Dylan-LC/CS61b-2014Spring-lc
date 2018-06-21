@@ -52,19 +52,31 @@ public class DList {
    */
   public DList() {
     //  Your solution here.
+      head = newNode(null, null, null);
+      head.prev = head;
+      head.next = head;
+    /*
+     * Why I cannot use head = newNode(Integer.MIN_VALUE, head, head)
+     * At run-time, it will give me an error:
+     * Exception in thread "main" java.lang.NullPointerException
+     *            at list.DList.toString(DList.java:243)
+     *            at list.TestDList.testEmpty(TestDList.java:40)
+     *            at list.TestDList.main(TestDList.java:23)
+     */
+      size = 0;
   }
 
   /**
    *  isEmpty() returns true if this DList is empty, false otherwise.
-   *  @return true if this DList is empty, false otherwise. 
+   *  @return true if this DList is empty, false otherwise.
    *  Performance:  runs in O(1) time.
    */
   public boolean isEmpty() {
     return size == 0;
   }
 
-  /** 
-   *  length() returns the length of this DList. 
+  /**
+   *  length() returns the length of this DList.
    *  @return the length of this DList.
    *  Performance:  runs in O(1) time.
    */
@@ -79,6 +91,14 @@ public class DList {
    */
   public void insertFront(Object item) {
     // Your solution here.
+      if (isEmpty()) {
+	  head.next = newNode(item, head, head);
+	  head.prev = head.next;
+      } else {
+	  head.next.prev = newNode(item, head, head.next);
+	  head.next = head.next.prev;
+      }
+      size++;
   }
 
   /**
@@ -88,6 +108,14 @@ public class DList {
    */
   public void insertBack(Object item) {
     // Your solution here.
+      if (isEmpty()) {
+	  head.next = newNode(item, head, head);
+	  head.prev = head.next;
+      } else {
+	  head.prev.next = newNode(item, head.prev, head);
+	  head.prev = head.prev.next;
+      }
+      size++;
   }
 
   /**
@@ -101,6 +129,11 @@ public class DList {
    */
   public DListNode front() {
     // Your solution here.
+      if (isEmpty()) {
+	  return null;
+      } else {
+	  return head.next;
+      }
   }
 
   /**
@@ -114,6 +147,11 @@ public class DList {
    */
   public DListNode back() {
     // Your solution here.
+      if (isEmpty()) {
+	  return null;
+      } else {
+	  return head.prev;
+      }
   }
 
   /**
@@ -128,6 +166,11 @@ public class DList {
    */
   public DListNode next(DListNode node) {
     // Your solution here.
+      if (node.equals(null) || node.next.equals(head)) {
+	  return null;
+      } else {
+	  return node.next;
+      }
   }
 
   /**
@@ -142,6 +185,11 @@ public class DList {
    */
   public DListNode prev(DListNode node) {
     // Your solution here.
+      if (node.equals(null) || node.prev.equals(head)) {
+	  return null;
+      } else {
+	  return node.prev;
+      }
   }
 
   /**
@@ -153,6 +201,11 @@ public class DList {
    */
   public void insertAfter(Object item, DListNode node) {
     // Your solution here.
+      if (!node.equals(null)) {
+	  node.next.prev = newNode(item, node, node.next);
+	  node.next = node.next.prev;
+	  size++;
+      }
   }
 
   /**
@@ -164,6 +217,11 @@ public class DList {
    */
   public void insertBefore(Object item, DListNode node) {
     // Your solution here.
+      if (!node.equals(null)) {
+	  node.prev.next = newNode(item, node.prev, node);
+	  node.prev = node.prev.next;
+	  size++;
+      }
   }
 
   /**
@@ -172,6 +230,12 @@ public class DList {
    */
   public void remove(DListNode node) {
     // Your solution here.
+      if (!node.equals(null)) {
+	  node.prev.next = node.next;
+	  node.next.prev = node.prev;
+	  node.item = null;
+	  size--;
+      }
   }
 
   /**
@@ -191,4 +255,6 @@ public class DList {
     }
     return result + "]";
   }
+
+
 }
