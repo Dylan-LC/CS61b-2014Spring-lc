@@ -58,6 +58,8 @@
 
 
 ## JDB *command list*
+| Command | Description |
+| --- | --- |
 | `connectors` | list available connectors and transports in this VM |
 | `run [class [args]]` | start execution of application's main class |
 | `threads [threadgroup]` | list threads |
