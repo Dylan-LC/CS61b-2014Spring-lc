@@ -57,7 +57,7 @@
 | `M-x eshell` | Start the Emacs shell. |
 
 
-## jdb **command list**
+## JDB *command list*
 | `connectors` | list available connectors and transports in this VM |
 | `run [class [args]]` | start execution of application's main class |
 | `threads [threadgroup]` | list threads |
@@ -121,8 +121,8 @@
 | `version` | print version information |
 | `exit (or quit)` | exit debugger |
 <br />
-[//]: # (<class id>: a full class name with package qualifiers)
-[//]: # (<class pattern>: a class name with a leading or trailing wildcard '\*')
+[comment]: <> (<class id>: a full class name with package qualifiers)
+[comment]: <> (<class pattern>: a class name with a leading or trailing wildcard '\*')
 [//]: # (<thread id>: thread number as reported in the 'threads' command)
 [//]: # (<expr>: a Java(TM) Programming Language expression.)
 [//]: # (Most common syntax is supported.)
