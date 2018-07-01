@@ -55,8 +55,8 @@
 | `M-x shell` | Run a subshell with input and output through an Emacs buffer. You can then give commands interactively. |
 | `M-x term` | Run a subshell with input and output through an Emacs buffer. You can then give commands interactively. Full terminal emulation is available. |
 | `M-x eshell` | Start the Emacs shell. |
-
 <br />
+
 ## JDB *command list*
 | Command | Description |
 | --- | --- |
@@ -122,12 +122,13 @@
 | `help (or ?)` | list commands |
 | `version` | print version information |
 | `exit (or quit)` | exit debugger |
+<br /><br />
+
+[comment]: # (<class id>: a full class name with package qualifiers) <br />
+[comment]: # (<class pattern>: a class name with a leading or trailing wildcard '&ast') <br />
+[comment]: # (<thread id>: thread number as reported in the 'threads' command) <br />
+[comment]: # (<expr>: a Java(TM) Programming Language expression.) <br />
+[comment]: # (Most common syntax is supported.) <br />
 <br />
-[comment]: # (<class id>: a full class name with package qualifiers)<br />
-[comment]: # (<class pattern>: a class name with a leading or trailing wildcard '&ast')<br />
-[comment]: # (<thread id>: thread number as reported in the 'threads' command)<br />
-[comment]: # (<expr>: a Java(TM) Programming Language expression.)<br />
-[comment]: # (Most common syntax is supported.)
-<br />
-[comment]: # (Startup commands can be placed in either "jdb.ini" or ".jdbrc")<br />
-[comment]: # (in user.home or user.dir)<br />
+[comment]: # (Startup commands can be placed in either "jdb.ini" or ".jdbrc") <br />
+[comment]: # (in user.home or user.dir) <br />
