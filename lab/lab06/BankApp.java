@@ -83,6 +83,8 @@ public class BankApp {
    *  doWithdraw() prompts the user for an account number and tries
    *  to perform a withdrawal transaction from that account.
    *  @exception IOException if there are problems reading user input.
+   *  @exception BadAccountException if there are problems with account number.
+   *  @exception BadTransactionException if input amount is less than zero.
    */
   private void doWithdraw() throws IOException, BadAccountException, BadTransactionException {
     // Get account number.

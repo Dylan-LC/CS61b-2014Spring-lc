@@ -19,4 +19,8 @@ class ListNode {
     next = n;
   }
 
+    public String toString() {
+	return item.toString();
+    }
+
 }
